@@ -1,9 +1,17 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 class App extends Component {
   render() {
-    return <h1>{this.props.message}</h1>
+    return (
+      <div className='container'>
+        <Header />
+        <main><p>{this.props.message}</p></main>
+        <Footer />
+      </div>
+    )
   }
 }
 

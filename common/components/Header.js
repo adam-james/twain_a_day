@@ -9,7 +9,7 @@ class Header extends Component {
              alt='Mark Twain'
              style={{height: '250px'}}>
         </img>
-        <small style={{display: 'block'}}>Two Mark Twain quotes for each day of the week.</small>
+        <small className='tagline'>Two Mark Twain quotes for each day of the week.</small>
       </header>
     )
   }

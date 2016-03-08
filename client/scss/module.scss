@@ -7,6 +7,13 @@
 
 .header .title {
   font-family: $title-font;
+  margin-bottom: 10px;
+}
+
+.header .tagline {
+  display: block;
+  margin-top: 10px;
+  font-size: 16px;
 }
 
 .footer {

@@ -30,7 +30,7 @@ function handleRender(req, res) {
     date: moment().format('MMM Do, YYYY'),
     quotes: [
       `The secret of getting ahead is getting started.`,
-      `Clothes make the man. Naked people have little or no influence on society`
+      `Clothes make the man. Naked people have little or no influence on society.`
     ]
   }
 

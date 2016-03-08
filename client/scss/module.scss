@@ -19,9 +19,21 @@
 .footer {
   text-align: center;
   border-top: 1px solid gray;
-  padding-top: 25px;
+  padding: 15px 0;
 }
 
 .footer .signature {
   font-family: $signature-font;
+}
+
+.calendar-header {
+  text-align: center;
+  padding-top: 10px;
+  border-bottom: 1px solid gray;
+}
+
+.calendar-item {
+  text-align: center;
+  padding-top: 25px;
+  font-size: 18px;
 }

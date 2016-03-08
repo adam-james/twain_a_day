@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div className='container'>
         <Header />
-        <main><p>{this.props.message}</p></main>
+        <div id='calendar'></div>
         <Footer />
       </div>
     )

@@ -8,6 +8,7 @@ import webpackConfig from '../webpack.config'
 import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { Provider } from 'react-redux'
+import moment from 'moment'
 
 import configureStore from '../common/store/configureStore'
 import App from '../common/containers/App'
@@ -25,7 +26,13 @@ app.use(webpackHotMiddleware(compiler))
 app.use(handleRender)
 
 function handleRender(req, res) {
-  const initialState = { message: 'Hola, Mundo!'}
+  const initialState = {
+    date: moment().format('MMM Do, YYYY'),
+    quotes: [
+      `The secret of getting ahead is getting started.`,
+      `Clothes make the man. Naked people have little or no influence on society`
+    ]
+  }
 
   const store = configureStore(initialState)
 

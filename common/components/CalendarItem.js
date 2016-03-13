@@ -2,10 +2,10 @@ import React, { Component, PropTypes } from 'react'
 
 class CalendarItem extends Component {
   render() {
-    const { quotes } = this.props
-    
+    const { quotes, className } = this.props
+
     return (
-      <div className='row calendar-item'>
+      <div className={`row calendar-item ${className}`}>
         <p>
           {quotes[0]}
         </p>
@@ -18,7 +18,8 @@ class CalendarItem extends Component {
 }
 
 CalendarItem.propTypes = {
-  quotes: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired
+  quotes: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  className: PropTypes.string.isRequired
 }
 
 export default CalendarItem

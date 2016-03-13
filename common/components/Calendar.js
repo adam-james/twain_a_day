@@ -7,7 +7,9 @@ class Calendar extends Component {
 
     console.log(activeSlideIndex)
     var calendarItems = quotes.map(function(pair, index) {
-      return <CalendarItem quotes={pair} key={index} />
+      return <CalendarItem  className={ activeSlideIndex === index ? 'active-slide' : ''}
+                            quotes={pair}
+                            key={index} />
     })
 
     return (

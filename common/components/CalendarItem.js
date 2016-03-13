@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react'
 class CalendarItem extends Component {
   render() {
     const { quotes } = this.props
-
+    
     return (
       <div className='row calendar-item'>
         <p>

@@ -19,7 +19,7 @@ class Calendar extends Component {
                   onClick={onSlideLeft}>
             Previous
           </button>
-          <h3 className='eight columns'>{date}</h3>
+          <h3 className='eight columns'>{date.date}</h3>
           <button className='two columns'
                   onClick={onSlideRight}>
             Next

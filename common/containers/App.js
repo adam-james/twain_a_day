@@ -8,15 +8,15 @@ import * as Actions from '../actions'
 
 class App extends Component {
   render() {
-    const { date, quotes, activeSlideIndex, slideLeft, slideRight } = this.props
+    const { date, quotes, activeSlideIndex, dateBackwards, dateForwards } = this.props
 
     return (
       <div className='container'>
         <Header />
         <Calendar date={date}
                   activeSlideIndex={activeSlideIndex}
-                  onSlideLeft={slideLeft}
-                  onSlideRight={slideRight}
+                  onSlideLeft={dateBackwards}
+                  onSlideRight={dateForwards}
                   quotes={quotes} />
         <Footer />
       </div>

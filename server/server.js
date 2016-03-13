@@ -27,7 +27,10 @@ app.use(handleRender)
 
 function handleRender(req, res) {
   const initialState = {
-    date: moment().format('MMM Do, YYYY'),
+    date: {
+      counter: 0,
+      date: moment().format('MMM Do, YYYY')
+    },
     quotes: [
       [
         `The secret of getting ahead is getting started.`,

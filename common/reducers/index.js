@@ -2,8 +2,9 @@ import { combineReducers } from 'redux'
 import {
   SLIDE_LEFT,
   SLIDE_RIGHT,
-  DATE_FORWARD,
-  DATE_BACKWARD  } from '../actions'
+  INCREMENT_DATE_COUNTER,
+  DECREMENT_DATE_COUNTER,
+  SET_DATE } from '../actions'
 import moment from 'moment'
 
 function activeSlideIndex(state = 0, action) {
@@ -25,12 +26,29 @@ function activeSlideIndex(state = 0, action) {
   }
 }
 
-function date(state = moment().format('MMM Do, YYYY'), action) {
+function date(state = {
+  counter: 0,
+  date: moment().format('MMM Do, YYYY')
+}, action) {
   switch (action.type) {
-    case DATE_FORWARD:
-      return moment().add(1, 'days').format('MMM Do, YYYY')
-    case DATE_BACKWARD:
-      return moment().subtract(1, 'days').format('MMM Do, YYYY')
+    case SET_DATE:
+      if (state.counter < 0) {
+        return Object.assign(state, {}, {
+          date: moment().subtract(Math.abs(state.counter), 'days').format('MMM Do, YYYY')
+        })
+      } else {
+        return Object.assign(state, {}, {
+          date: moment().add(state.counter, 'days').format('MMM Do, YYYY')
+        })
+      }
+    case INCREMENT_DATE_COUNTER:
+      return Object.assign(state, {}, {
+        counter: state.counter + 1
+      })
+    case DECREMENT_DATE_COUNTER:
+      return Object.assign(state, {}, {
+        counter: state.counter - 1
+      })
     default:
       return state
   }

@@ -47,6 +47,6 @@ export function dateBackwards() {
   return function(dispatch) {
     dispatch(decrementDateCounter())
     dispatch(setDate())
-    dispatch(slideRight())
+    dispatch(slideLeft())
   }
 }

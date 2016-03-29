@@ -7,19 +7,34 @@ import {
   SET_DATE } from '../actions'
 import moment from 'moment'
 
-function activeSlideIndex(state = 0, action) {
+function activeSlide(state = {
+  index: 0,
+  slideDirection: ''
+}, action) {
   switch (action.type) {
     case SLIDE_LEFT:
-      if (state === 0) {
-        return 6
+      if (state.index === 0) {
+        return Object.assign({}, state, {
+          slideDirection: 'slide-left',
+          index: 6
+        })
       } else {
-        return state - 1
+        return Object.assign({}, state, {
+          slideDirection: 'slide-left',
+          index: state.index - 1
+        })
       }
     case SLIDE_RIGHT:
-      if (state === 6) {
-        return 0
+      if (state.index === 6) {
+        return Object.assign({}, state, {
+          slideDirection: 'slide-right',
+          index: 0
+        })
       } else {
-        return state + 1
+        return Object.assign({}, state, {
+          slideDirection: 'slide-right',
+          index: state.index + 1
+        })
       }
     default:
       return state
@@ -59,7 +74,7 @@ function quotes(state = [], action) {
 }
 
 const rootReducer = combineReducers({
-  activeSlideIndex,
+  activeSlide,
   date,
   quotes
 })

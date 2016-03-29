@@ -42,3 +42,35 @@
 .calendar-item.active-slide {
   display: block;
 }
+
+.calendar-item.active-slide {
+  display: block;
+}
+
+.calendar-item.active-slide.slide-left {
+  animation-duration: 1s;
+  animation-name: slideLeft;
+}
+
+.calendar-item.active-slide.slide-right {
+  animation-duration: 1s;
+  animation-name: slideRight;
+}
+
+@keyframes slideLeft {
+  0% {
+		transform: translateX(-150%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
+}
+
+@keyframes slideRight {
+	0% {
+		transform: translateX(150%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
+}

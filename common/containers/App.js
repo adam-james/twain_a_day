@@ -8,13 +8,14 @@ import * as Actions from '../actions'
 
 class App extends Component {
   render() {
-    const { date, quotes, activeSlideIndex, dateBackwards, dateForwards } = this.props
+    const { date, quotes, activeSlide, dateBackwards, dateForwards } = this.props
 
     return (
       <div className='container'>
         <Header />
         <Calendar date={date}
-                  activeSlideIndex={activeSlideIndex}
+                  activeSlideIndex={activeSlide.index}
+                  slideDirection={activeSlide.slideDirection}
                   onSlideLeft={dateBackwards}
                   onSlideRight={dateForwards}
                   quotes={quotes} />
@@ -25,8 +26,8 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-  const { date, quotes, activeSlideIndex } = state
-  return { date, quotes, activeSlideIndex }
+  const { date, quotes, activeSlide } = state
+  return { date, quotes, activeSlide }
 }
 
 function mapDispatchToProps(dispatch) {

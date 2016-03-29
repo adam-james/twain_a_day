@@ -3,11 +3,11 @@ import CalendarItem from './CalendarItem'
 
 class Calendar extends Component {
   render() {
-    const { date, quotes, activeSlideIndex, onSlideRight, onSlideLeft } = this.props
+    const { date, quotes, activeSlideIndex, slideDirection, onSlideRight, onSlideLeft } = this.props
 
-    console.log(activeSlideIndex)
+    console.log(activeSlideIndex, slideDirection)
     var calendarItems = quotes.map(function(pair, index) {
-      return <CalendarItem  className={ activeSlideIndex === index ? 'active-slide' : ''}
+      return <CalendarItem  className={ activeSlideIndex === index ? ('active-slide ' + slideDirection) : ''}
                             quotes={pair}
                             key={index} />
     })
@@ -39,6 +39,7 @@ Calendar.propTypes = {
   date: PropTypes.string.isRequired,
   quotes: PropTypes.array.isRequired,
   activeSlideIndex: PropTypes.number.isRequired,
+  slideDirection: PropTypes.string.isRequired,
   onSlideLeft: PropTypes.func.isRequired,
   onSlideRight: PropTypes.func.isRequired
 }

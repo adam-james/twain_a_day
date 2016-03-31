@@ -4,7 +4,7 @@ var webpack = require('webpack')
 module.exports = {
   devtool: 'inline-source-map',
   entry: [
-    'webpack-hot-middleware/client',
+    // 'webpack-hot-middleware/client',
     './client/index.js'
   ],
   output: {
@@ -14,7 +14,7 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    // new webpack.HotModuleReplacementPlugin()
   ],
   module: {
     loaders: [
@@ -23,9 +23,6 @@ module.exports = {
         loader: 'babel',
         exclude: /node_modules/,
         include: __dirname,
-        query: {
-          presets: [ 'react-hmre' ]
-        }
       },
       {
         test: /\.scss$/,

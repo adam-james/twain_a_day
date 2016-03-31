@@ -5,7 +5,6 @@ class Calendar extends Component {
   render() {
     const { date, quotes, activeSlideIndex, slideDirection, onSlideRight, onSlideLeft } = this.props
 
-    console.log(activeSlideIndex, slideDirection)
     var calendarItems = quotes.map(function(pair, index) {
       return <CalendarItem  className={ activeSlideIndex === index ? ('active-slide ' + slideDirection) : ''}
                             quotes={pair}
@@ -36,7 +35,7 @@ class Calendar extends Component {
 }
 
 Calendar.propTypes = {
-  date: PropTypes.string.isRequired,
+  date: PropTypes.object.isRequired,
   quotes: PropTypes.array.isRequired,
   activeSlideIndex: PropTypes.number.isRequired,
   slideDirection: PropTypes.string.isRequired,

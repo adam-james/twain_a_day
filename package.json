@@ -7,7 +7,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postinstall": "webpack --config ./webpack.config.js",
+    "postinstall": "webpack",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -35,12 +35,6 @@
     "serve-static": "^1.10.2",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.14",
-  },
-  "devDependencies": {
-    "babel-preset-react-hmre": "^1.1.1",
-    "babel-runtime": "^6.6.1",
-    "webpack-dev-middleware": "^1.5.1",
-    "webpack-hot-middleware": "^2.9.1"
   },
   "babel": {
     "presets": [

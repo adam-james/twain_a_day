@@ -7,6 +7,6 @@ app.use('*', function(req, res) {
   res.sendFile(__dirname + '/dist/index.html');
 });
 
-app.listen(3000, function() {
+app.listen(process.env.PORT, function() {
   console.log('server up')
 });
